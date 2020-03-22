@@ -10,38 +10,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="mystylsheet" href="./style.css">
-
     <title>Code Quiz</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav id=navBar class="navbar navbar-light bg-light">
         <span class="navbar-brand mb-0 h1">View Highscores</span>
-        <span class="navbar-brand mb-0 h1">Timer</span>
+        <span class="navbar-brand mb-0 h1">
+            <p id="timer">Timer</p>
+        </span>
     </nav>
 
-    <!-- Bootstrap car used for quiz questions. I changed the width if the card; added multiple buttons; and added breaks b/w btns. -->
+    <!-- Bootstrap card for quiz questions. Changed the width; added multiple buttons; put them in a list; 
+        and added breaks b/w btns. -->
+
     <div class="card mx-auto" style="width: 600px">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                 content.</p>
             <ol>
+                <!-- Added class to make btn text white. -->
                 <li>
-                    <a class="btn btn-primary">A. Answer 1</a>
+                    <a class="btn btn-primary text-white">Answer 1</a>
                 </li>
                 <br>
                 <li>
-                    <a class="btn btn-primary">B. Answer 2</a>
+                    <a class="btn btn-primary text-white">Answer 2</a>
                 </li>
                 <br>
                 <li>
-                    <a class="btn btn-primary">C. Answer 3</a>
+                    <a class="btn btn-primary text-white">Answer 3</a>
                 </li>
                 <br>
                 <li>
-                    <a class="btn btn-primary">D. Answer 4</a>
+                    <a class="btn btn-primary text-white">Answer 4</a>
                 </li>
             </ol>
 
@@ -60,6 +63,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <!-- link my JS doc here. -->
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
