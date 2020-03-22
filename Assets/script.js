@@ -1,9 +1,7 @@
 var timeEl = document.getElementById("timer");
-console.log(timeEl.textContent);
-
-
+var startQuiz = document.getElementById("startBtn");
 var secondsLeft = 60;
-console.log(secondsLeft);
+
 
 
 function setTime() {
@@ -24,4 +22,12 @@ function sendMessage() {
 
 }
 
-setTime();
+
+
+startQuiz.addEventListener("click", function (event) {
+    event.preventDefault();
+    setTime();
+
+    console.log(event);
+
+});
