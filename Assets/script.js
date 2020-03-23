@@ -95,28 +95,28 @@ function checkAnswer(answer) {
         currentQuestionIndex++;
         renderQuestion();
     } else {
-        // else we are done and we can call the scoreRender function 
+        // else we are done and we can hide the quiz card by setting diplay to none and the render the score card.
+        quiz.style.display = "none";
         scoreRender();
+        finishMessage();
     }
 
 }
-// This function, when called upon above, will hide the quiz container and display the score container .
-// The score container is updated with the new score variable. The timer is removed, since it is no longer needed.
+// This function 
 function scoreRender() {
-    quiz.style.display = "none";
     doneQuiz.style.display = "block";
     scoreDisplay.textContent = "Your score is " + score + ".";
-    timeEl.style.display = "none";
+    timeEl.textContent = "You're Done!";
+    // finishMessage();
 }
 
-// This function sets the 60-second countdown timer in the navbar.
+
 function setTime() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left.";
         if (secondsLeft === 0 || secondsLeft < 0) {
             clearInterval(timerInterval);
-            // If you don't finish in time, the timer shows this text
             timeEl.textContent = "Time's Up!";
         }
 
@@ -124,9 +124,14 @@ function setTime() {
 }
 
 
-// This event listener waits for the first btn click to start the quiz.
-// This then triggers the setTime timer function above, hides the start container, and displays the quiz container.
-// It also fills the quiz container with the first question by way of the renderQuestion function.
+
+// function finishMessage() {
+//     timeEl.textContent = "You're Done!";
+//     return;
+// }
+
+
+
 startQuiz.addEventListener("click", function (event) {
     event.preventDefault();
     startQuiz.style.display = "none";

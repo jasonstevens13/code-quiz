@@ -13,6 +13,9 @@
     <title>Code Quiz</title>
 </head>
 
+<!-- Bootstrap navbar included here; altered to closer resemble the look we needed;
+id created on the p tag for aletring the text with a countdown in the js file -->
+
 <body>
     <nav id=navBar class="navbar navbar-light bg-light">
         <span class="navbar-brand mb-0 h1">View Highscores</span>
@@ -21,8 +24,8 @@
         </span>
     </nav>
 
-    <!-- Bootstrap card for quiz questions. Changed the width; added multiple buttons; put them in a list; 
-        and added breaks b/w btns. -->
+    <!-- 3 Bootstrap cards added ereafter: onoe for the start of quiz; one for the quiz questions and answers; 
+        and one for the final score and initials entry. -->
 
     <div id="startQuiz" class="card mx-auto" style="width: 600px; display: block;">
         <div class="card-body">
@@ -43,10 +46,11 @@
 
     <div id="quiz" class="card mx-auto" style="width: 600px; display: none;">
         <div class="card-body">
+            <!-- ids added for altering text from js file, with different quiz questions -->
             <h5 id="question" class="card-title">Question 1</h5>
             <p id="questionText" class="card-text">Question</p>
             <ol id="choices">
-                <!-- Added class to make btn text white. -->
+                <!-- Added class to make btn text white, and added class 'choice' for altering the text in js file. -->
                 <li>
                     <a id="A" onclick="checkAnswer('A')" class="btn btn-primary text-white choice">A</a>
                 </li>
@@ -74,7 +78,7 @@
             <form class="form-inline">
                 <label class="sr-only" for="inlineFormInputName2">Name</label>
                 <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="ABC">
-
+                <!-- id needed here i btn for submission of user initial tolocal storage -->
                 <button type="submit" class="btn btn-primary mb-2">Submit</button>
             </form>
 
