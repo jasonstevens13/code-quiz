@@ -96,21 +96,21 @@ function checkAnswer(answer) {
         renderQuestion();
     } else {
         // else we are done and we can hide the quiz card by setting diplay to none and the render the score card.
-        quiz.style.display = "none";
         scoreRender();
-        finishMessage();
+
     }
 
 }
-// This function 
+// This function function hides quiz card, and shows score card with updated score var.
 function scoreRender() {
+    quiz.style.display = "none";
     doneQuiz.style.display = "block";
     scoreDisplay.textContent = "Your score is " + score + ".";
-    timeEl.textContent = "You're Done!";
-    // finishMessage();
+    timeEl.style.display = "none";
 }
 
-
+// This function is called upon below after the click of the start button. 
+// It begins the timer countdown for every 1 second.
 function setTime() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -124,14 +124,7 @@ function setTime() {
 }
 
 
-
-// function finishMessage() {
-//     timeEl.textContent = "You're Done!";
-//     return;
-// }
-
-
-
+// Listener for a click, kicks off the timer, hides start card, shows quiz card.
 startQuiz.addEventListener("click", function (event) {
     event.preventDefault();
     startQuiz.style.display = "none";
