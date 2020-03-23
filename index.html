@@ -24,7 +24,7 @@
     <!-- Bootstrap card for quiz questions. Changed the width; added multiple buttons; put them in a list; 
         and added breaks b/w btns. -->
 
-    <div id="0" class="card mx-auto" style="width: 600px; display: block;">
+    <div id="startQuiz" class="card mx-auto" style="width: 600px; display: block;">
         <div class="card-body">
             <h5 id="cardTitle" class="card-title">Javascript Quiz</h5>
             <p id="cardText" class="card-text">Take this Javascript quiz that covers 5 basic facts, then see how you
@@ -34,147 +34,53 @@
 
             <!-- Added class to make btn text white. -->
 
-            <ol id="btnList">
+            <ol>
                 <!-- Added class to make btn text white. -->
                 <a id="startBtn" class="btn btn-primary text-white">START QUIZ</a>
             </ol>
-
-
         </div>
     </div>
 
-    <div id="1" class="card mx-auto" style="width: 600px; display: none;">
+    <div id="quiz" class="card mx-auto" style="width: 600px; display: none;">
         <div class="card-body">
-            <h5 class="card-title">Question 1</h5>
-            <p class="card-text"> What is the abbreviation for Javascrip?</p>
-            <ol>
+            <h5 id="question" class="card-title">Question 1</h5>
+            <p id="questionText" class="card-text">Question</p>
+            <ol id="choices">
                 <!-- Added class to make btn text white. -->
                 <li>
-                    <a id="incorrect" class="btn btn-primary text-white">JVS</a>
+                    <a id="A" onclick="checkAnswer('A')" class="btn btn-primary text-white choice">A</a>
                 </li>
                 <br>
                 <li>
-                    <a id="correct" class="btn btn-primary text-white">JS</a>
+                    <a id="B" onclick="checkAnswer('B')" class="btn btn-primary text-white choice">B</a>
                 </li>
                 <br>
                 <li>
-                    <a id="incorrect" class="btn btn-primary text-white">JavS</a>
+                    <a id="C" onclick="checkAnswer('C')" class="btn btn-primary text-white choice">C</a>
                 </li>
                 <br>
                 <li>
-                    <a id="incorrect" class="btn btn-primary text-white">Jscript</a>
+                    <a id="D" onclick="checkAnswer('D')" class="btn btn-primary text-white choice">D</a>
                 </li>
             </ol>
 
         </div>
     </div>
 
-    <div id="2" class="card mx-auto" style="width: 600px; display: none;">
+    <div id="doneQuiz" class="card mx-auto" style="width: 600px; display: none;">
         <div class="card-body">
-            <h5 class="card-title">Question 2</h5>
-            <p class="card-text">Javascript is linked to an html page with what tag type?</p>
-            <ol>
-                <!-- Added class to make btn text white. -->
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">&lt;p&gt;</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">&lt;html&gt;</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" lass="btn btn-primary text-white">&lt;src&gt;</a>
-                </li>
-                <br>
-                <li>
-                    <a id="correct" class="btn btn-primary text-white">&lt;script&gt;</a>
-                </li>
-            </ol>
+            <h5 class="card-title">All Done Quiz</h5>
+            <p class="card-text">Your Score: </p>
+            <form class="form-inline">
+                <label class="sr-only" for="inlineFormInputName2">Name</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="ABC">
+
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
 
         </div>
     </div>
 
-    <div id="3" class="card mx-auto" style="width: 600px; display: none;">
-        <div class="card-body">
-            <h5 class="card-title">Question 3</h5>
-            <p class="card-text"> Fill in the blank. Javascript has 3 kinds of popup boxes: Alert, Confirm, and _______.
-            </p>
-            <ol>
-                <!-- Added class to make btn text white. -->
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">Window</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">Warning!</a>
-                </li>
-                <br>
-                <li>
-                    <a id="correct" class="btn btn-primary text-white">Prompt</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">Caution!</a>
-                </li>
-            </ol>
-
-        </div>
-    </div>
-
-    <div id="4" class="card mx-auto" style="width: 600px; display: none;">
-        <div class="card-body">
-            <h5 class="card-title">Question 4</h5>
-            <p class="card-text"> Fill in the blank. Written in global scope, the method alert(); is the same as writing
-                window._____();</p>
-            <ol>
-                <!-- Added class to make btn text white. -->
-                <li>
-                    <a id="correct" class="btn btn-primary text-white">alert</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">this</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">prompt</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">document</a>
-                </li>
-            </ol>
-
-        </div>
-    </div>
-
-    <div id="5" class="card mx-auto" style="width: 600px; display: none;">
-        <div class="card-body">
-            <h5 class="card-title">Question 5</h5>
-            <p class="card-text"> Fill in the blank. Combined, HTML, CSS, and Javascript are the languages of the ____.
-            </p>
-            <ol>
-                <!-- Added class to make btn text white. -->
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">back-end</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" class="btn btn-primary text-white">server</a>
-                </li>
-                <br>
-                <li>
-                    <a id="incorrect" lass="btn btn-primary text-white">programmer</a>
-                </li>
-                <br>
-                <li>
-                    <a id="correct" class="btn btn-primary text-white">web</a>
-                </li>
-            </ol>
-
-        </div>
-    </div>
 
 
     <!-- Optional JavaScript -->
