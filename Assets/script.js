@@ -1,3 +1,4 @@
+// Here I have created varibales for all of the specific html IDs that are being utilized.
 var timeEl = document.getElementById("timer");
 var startQuizBtn = document.getElementById("startBtn");
 var startQuiz = document.getElementById("startQuiz");
@@ -11,19 +12,16 @@ var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 var scoreDisplay = document.getElementById("scoreDisplay");
 
+// The below current question index variable is initializing at the first object in our array of questions.
+// Therefore, when we display the question card/container, we start with the first question.
 var currentQuestionIndex = 0;
+// Initialized score at 0.
 var score = 0;
+// Initialized seconds left on timer at 60.
 var secondsLeft = 60;
 
 
-
-// var correctAnswers = document.getElementById("correct");
-// var incorrectAnswers = document.getElementById("incorrect");
-// var displayedCard = document.getElementById("0");
-
-
-
-
+// This is an array of objects for each quiz question, answers, and correct answer.
 var questionsArray = [
     {
         question: 'What is the abbreviation for Javascrip?',
@@ -67,8 +65,11 @@ var questionsArray = [
     }
 ];
 
+// To identify the last question in the array.
 var lastQuestionIndex = questionsArray.length - 1;
 
+// This function serves to render the question contents into the quiz card in the html file.
+// Each ID of the html quiz container is identified and then the text content of the currect question is pushed into it.
 function renderQuestion() {
     let q = questionsArray[currentQuestionIndex];
     question.textContent = q.question;
@@ -79,60 +80,53 @@ function renderQuestion() {
     choiceD.textContent = q.choiceD;
 }
 
+// This function serves to check the user's answer. 
 function checkAnswer(answer) {
+    // If correct per the object in the question array, add 20 pts; else take 10 seconds off of the timer.
     if (questionsArray[currentQuestionIndex].correct == answer) {
         score = score + 20;
     } else {
-        console.log('Wrong');
         secondsLeft = secondsLeft - 10;
     }
+
+    // If the question we are on in the array is still less than the last question, then move to the next question
+    // and render it to the html.
     if (currentQuestionIndex < lastQuestionIndex) {
         currentQuestionIndex++;
         renderQuestion();
     } else {
-        // clearInterval(timerInterval);
-        finishMessage();
-        quiz.style.display = "none";
+        // else we are done and we can call the scoreRender function 
         scoreRender();
-        doneQuiz.style.display = "block";
-        finishMessage();
     }
 
 }
-
+// This function, when called upon above, will hide the quiz container and display the score container .
+// The score container is updated with the new score variable. The timer is removed, since it is no longer needed.
 function scoreRender() {
-
+    quiz.style.display = "none";
     doneQuiz.style.display = "block";
     scoreDisplay.textContent = "Your score is " + score + ".";
-
+    timeEl.style.display = "none";
 }
 
-
+// This function sets the 60-second countdown timer in the navbar.
 function setTime() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left.";
-        console.log(secondsLeft);
-        if (secondsLeft === 0 || secondsLeft < 0 || (doneQuiz.style.display = "block")) {
+        if (secondsLeft === 0 || secondsLeft < 0) {
             clearInterval(timerInterval);
-            sendMessage();
+            // If you don't finish in time, the timer shows this text
+            timeEl.textContent = "Time's Up!";
         }
 
     }, 1000);
 }
 
-function sendMessage() {
-    timeEl.textContent = "Time's Up!";
-    return;
-}
 
-function finishMessage() {
-    timeEl.textContent = "You're Done!";
-    return;
-}
-
-
-
+// This event listener waits for the first btn click to start the quiz.
+// This then triggers the setTime timer function above, hides the start container, and displays the quiz container.
+// It also fills the quiz container with the first question by way of the renderQuestion function.
 startQuiz.addEventListener("click", function (event) {
     event.preventDefault();
     startQuiz.style.display = "none";
@@ -142,6 +136,10 @@ startQuiz.addEventListener("click", function (event) {
 });
 
 
+// Pseudo-Code: If you are reading this, then I have not yet implemented the following:
+// I will store the score and initials input into local storage
+// I will have to sort by score, descending (where to do that I am not sure just yet)
+// The 'view highscores' navbar element needs to be turned into a link athat displays a listing of scores.
 
 
 
