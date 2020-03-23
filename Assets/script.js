@@ -9,6 +9,7 @@ var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
+var scoreDisplay = document.getElementById("scoreDisplay");
 
 var currentQuestionIndex = 0;
 var score = 0;
@@ -16,10 +17,6 @@ var secondsLeft = 60;
 
 
 
-// var cardTitle = document.getElementById("cardTitle");
-// var cardText = document.getElementById("cardText");
-// var btnList = document.getElementById("btnList");
-// var q1 = document.getElementById("q1");
 // var correctAnswers = document.getElementById("correct");
 // var incorrectAnswers = document.getElementById("incorrect");
 // var displayedCard = document.getElementById("0");
@@ -84,7 +81,7 @@ function renderQuestion() {
 
 function checkAnswer(answer) {
     if (questionsArray[currentQuestionIndex].correct == answer) {
-        score = score + 10;
+        score = score + 20;
     } else {
         console.log('Wrong');
         secondsLeft = secondsLeft - 10;
@@ -93,10 +90,20 @@ function checkAnswer(answer) {
         currentQuestionIndex++;
         renderQuestion();
     } else {
-        clearInterval(timerInterval):
+        // clearInterval(timerInterval);
         finishMessage();
+        quiz.style.display = "none";
         scoreRender();
+        doneQuiz.style.display = "block";
+        finishMessage();
     }
+
+}
+
+function scoreRender() {
+
+    doneQuiz.style.display = "block";
+    scoreDisplay.textContent = "Your score is " + score + ".";
 
 }
 
@@ -106,7 +113,7 @@ function setTime() {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left.";
         console.log(secondsLeft);
-        if (secondsLeft === 0 || secondsLeft < 0) {
+        if (secondsLeft === 0 || secondsLeft < 0 || (doneQuiz.style.display = "block")) {
             clearInterval(timerInterval);
             sendMessage();
         }
@@ -128,8 +135,10 @@ function finishMessage() {
 
 startQuiz.addEventListener("click", function (event) {
     event.preventDefault();
+    startQuiz.style.display = "none";
     setTime();
     renderQuestion();
+    quiz.style.display = "block";
 });
 
 
