@@ -24,41 +24,152 @@
     <!-- Bootstrap card for quiz questions. Changed the width; added multiple buttons; put them in a list; 
         and added breaks b/w btns. -->
 
-    <div class="card mx-auto" style="width: 600px">
+    <div id="0" class="card mx-auto" style="width: 600px; display: block;">
         <div class="card-body">
-            <h5 class="card-title">Javascript Quiz</h5>
-            <p class="card-text">Take this Javascript quiz that covers 5 basic facts, then see how you measure up
-                against
-                others in our 'Highscores' leader board! The quiz is timed - you have 60 seconds. 10 points for every
-                correct answer; for every incorrect answer we take 10 points AND reduce your timer by 10 seconds. </p>
+            <h5 id="cardTitle" class="card-title">Javascript Quiz</h5>
+            <p id="cardText" class="card-text">Take this Javascript quiz that covers 5 basic facts, then see how you
+                measure up against others in our 'Highscores' leader board! The quiz is timed - you have 60 seconds. 10
+                points for every correct answer; for every incorrect answer we take 10 points AND reduce your timer by
+                10 seconds. </p>
 
             <!-- Added class to make btn text white. -->
-            <a id="startBtn" class="btn btn-primary text-white">START QUIZ</a>
+
+            <ol id="btnList">
+                <!-- Added class to make btn text white. -->
+                <a id="startBtn" class="btn btn-primary text-white">START QUIZ</a>
+            </ol>
+
 
         </div>
     </div>
 
-    <div class="card mx-auto" style="width: 600px">
+    <div id="1" class="card mx-auto" style="width: 600px; display: none;">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="card-title">Question 1</h5>
+            <p class="card-text"> What is the abbreviation for Javascrip?</p>
             <ol>
                 <!-- Added class to make btn text white. -->
                 <li>
-                    <a class="btn btn-primary text-white">Answer 1</a>
+                    <a id="incorrect" class="btn btn-primary text-white">JVS</a>
                 </li>
                 <br>
                 <li>
-                    <a class="btn btn-primary text-white">Answer 2</a>
+                    <a id="correct" class="btn btn-primary text-white">JS</a>
                 </li>
                 <br>
                 <li>
-                    <a class="btn btn-primary text-white">Answer 3</a>
+                    <a id="incorrect" class="btn btn-primary text-white">JavS</a>
                 </li>
                 <br>
                 <li>
-                    <a class="btn btn-primary text-white">Answer 4</a>
+                    <a id="incorrect" class="btn btn-primary text-white">Jscript</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <div id="2" class="card mx-auto" style="width: 600px; display: none;">
+        <div class="card-body">
+            <h5 class="card-title">Question 2</h5>
+            <p class="card-text">Javascript is linked to an html page with what tag type?</p>
+            <ol>
+                <!-- Added class to make btn text white. -->
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">&lt;p&gt;</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">&lt;html&gt;</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" lass="btn btn-primary text-white">&lt;src&gt;</a>
+                </li>
+                <br>
+                <li>
+                    <a id="correct" class="btn btn-primary text-white">&lt;script&gt;</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <div id="3" class="card mx-auto" style="width: 600px; display: none;">
+        <div class="card-body">
+            <h5 class="card-title">Question 3</h5>
+            <p class="card-text"> Fill in the blank. Javascript has 3 kinds of popup boxes: Alert, Confirm, and _______.
+            </p>
+            <ol>
+                <!-- Added class to make btn text white. -->
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">Window</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">Warning!</a>
+                </li>
+                <br>
+                <li>
+                    <a id="correct" class="btn btn-primary text-white">Prompt</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">Caution!</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <div id="4" class="card mx-auto" style="width: 600px; display: none;">
+        <div class="card-body">
+            <h5 class="card-title">Question 4</h5>
+            <p class="card-text"> Fill in the blank. Written in global scope, the method alert(); is the same as writing
+                window._____();</p>
+            <ol>
+                <!-- Added class to make btn text white. -->
+                <li>
+                    <a id="correct" class="btn btn-primary text-white">alert</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">this</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">prompt</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">document</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+
+    <div id="5" class="card mx-auto" style="width: 600px; display: none;">
+        <div class="card-body">
+            <h5 class="card-title">Question 5</h5>
+            <p class="card-text"> Fill in the blank. Combined, HTML, CSS, and Javascript are the languages of the ____.
+            </p>
+            <ol>
+                <!-- Added class to make btn text white. -->
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">back-end</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" class="btn btn-primary text-white">server</a>
+                </li>
+                <br>
+                <li>
+                    <a id="incorrect" lass="btn btn-primary text-white">programmer</a>
+                </li>
+                <br>
+                <li>
+                    <a id="correct" class="btn btn-primary text-white">web</a>
                 </li>
             </ol>
 
