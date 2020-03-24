@@ -24,7 +24,7 @@ var secondsLeft = 60;
 // This is an array of objects for each quiz question, answers, and correct answer.
 var questionsArray = [
     {
-        question: 'What is the abbreviation for Javascrip?',
+        question: 'What is the abbreviation for Javascript?',
         choiceA: 'JVS',
         choiceB: 'JS',
         choiceC: 'JavS',
